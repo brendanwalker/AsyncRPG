@@ -1,0 +1,41 @@
+Install SQL Server Management Studio:
+http://blogs.msdn.com/b/bethmassi/archive/2011/02/18/step-by-step-installing-sql-server-management-studio-2008-express-after-visual-studio-2010.aspx
+
+-DB Setup-
+Initially Login to server name: localhost\SQLEXPRESS, Windows Authentication
+
+-Setup the Database for Mixed mode login
+1) Right-click on SQL Server instance at root of Object Explorer, click on Properties
+2) Select Security from the left pane.
+3) Select the SQL Server and Windows Authentication mode radio button, and click OK.
+4) Open up Services and restart the SQL Service (SQLEXPRESS) Windows service.
+
+-Create the AsyncRPG database:
+1) Open the root instance of the Object Explorer
+2) Right-click on the "Databases" folder and select "New Database..."
+3) Set the database name as "AsyncRPG"
+
+-Create a new database user:
+1) Open the root instance of the Object Explorer
+2) Expand the Security > Logins folder
+3) Right-click on the Logins for and select "New Login..."
+4) Set the login name as "asyncrpg"
+5) Set the password as "32bitbinary"
+6) Uncheck "Enforce password policy"
+7) Make sure Default database is set to "master"
+
+-Assign "asyncrpg" as the owner of AsyncRPG
+1) Open the root instance of the Object Explorer
+2) Open the AsyncRPG database
+3) Expand the Security > Users folder under the AsyncRPG database
+4) Right-click on the "Users" folder and select "New User..."
+5) Fill in the "user name" aslias field as just "asyncrpg"
+6) Set the "Default Schema" as "dbo"
+7) Check "db_owner" under schemas owned by this user
+8) Check "db_owner" under "Database role member" ships
+9) Test the user by logging in as asyncrpg and trying to create a table
+
+-Create an AsyncRPGTest database and add asyncrpg as the owner of that db as well
+
+-Run create_event_source.bat once as admin
+-Run reimport_room_templates.bat

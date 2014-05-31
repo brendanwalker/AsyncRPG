@@ -1,0 +1,89 @@
+{
+    "mob_spawn_table_set": [
+        {
+            "mob_spawn_table_name": "character_tread",
+            "entries": [
+                {
+                    "mob_type_name": "character_tread_gray",
+                    "weight": 2
+                },
+                {
+                    "mob_type_name": "character_tread_green",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "mob_spawn_table_name": "character_floater",
+            "entries": [
+                {
+                    "mob_type_name": "character_floater_blue",
+                    "weight": 8
+                },
+                {
+                    "mob_type_name": "character_floater_gray",
+                    "weight": 4
+                },
+                {
+                    "mob_type_name": "character_floater_purple",
+                    "weight": 2
+                },
+                {
+                    "mob_type_name": "character_floater_tan",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "mob_spawn_table_name": "character_walker",
+            "entries": [
+                {
+                    "mob_type_name": "character_walker_blue",
+                    "weight": 4
+                },
+                {
+                    "mob_type_name": "character_walker_gray",
+                    "weight": 2
+                },
+                {
+                    "mob_type_name": "character_walker_tan",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "mob_spawn_table_name": "character_warrior",
+            "entries": [
+                {
+                    "mob_type_name": "character_warrior_gray",
+                    "weight": 2
+                },
+                {
+                    "mob_type_name": "character_warrior_purple",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "mob_spawn_table_name": "default_spawn_table",
+            "entries": [
+                {
+                    "mob_spawn_table_name": "character_tread",
+                    "weight": 1
+                },
+                {
+                    "mob_spawn_table_name": "character_floater",
+                    "weight": 1
+                },
+                {
+                    "mob_spawn_table_name": "character_walker",
+                    "weight": 1
+                },
+                {
+                    "mob_spawn_table_name": "character_warrior",
+                    "weight": 1
+                }
+            ]
+        }		
+    ]
+}

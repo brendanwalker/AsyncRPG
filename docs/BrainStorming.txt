@@ -1,0 +1,127 @@
+What is the theme?
+* Asyncrhronous Board Game
+* Post-human robot world.
+* Escaping an abondoned space ship/colony.
+* Stealth vs. Combat
+	* Cameras (Non-panning)
+	* Other Robots
+* Hacking terminals and other robots (Simple dice roll, not mini-game)
+
+What is the purpose?
+* Gather enough energy to escape the dungeon
+* Fight other robots
+* Get loot
+* Upgrade abilities
+* Fight a boss at the top or bottom level
+* Procedural generation of rooms 
+	Room layout based on grammars (permute a finite number of room types based on constraints)
+
+Building Generation
+	-Madlib style input for contraints
+		* Dungeon Size
+		* Dungeon Tile Set
+		* Enemy count
+		* Enemy difficulty
+		* Victory Objective
+			Kill Boss
+			Find item
+			Escape Undetected
+		* Names (Boss, Items, Characters)		
+	-Room Types
+		* Security
+		* Hallway
+		* Storage
+		* Cubicals
+		* Courtyards
+	-Room Layout
+		Given game size, compute:
+			# of rooms
+			number of floors
+			starting room
+		Use grammar		
+	-Room Templates
+		*Loaded at web service startup time 
+			Ogmo .oel XML files scanned from shared\content\maps\folder
+			For each room, store room name, tileset name, nav-mesh, portals, and any entities
+	-Room Generation Algorithm
+		* Given: 
+			- Dungeon size enum (small, medium, large)
+		* Derived:
+			- NumFloors
+			- Max floor extents
+			- Max rooms
+		* Subtractive approach
+			- Start off with fully connected room set
+			- Until we've fallen below a room count keep removing rooms (or failed to remove a room)
+				- Find the set of rooms whose removal wouldn't cause disjoint room sets to form
+				- Randomly remove a room from this set
+		* Room Theming
+			- Pick tile sets for each room based on contraints
+				- Floor
+				- monster distribution
+				- loot distribution
+				- portal contraints
+				- proximity to other room themes
+			- Seed the rooms
+				- monster spawners
+				- loot
+Enemy AIs
+* Basic Light Melee
+* Basic Heavy Melee
+* Turrets
+* Exploding robots
+
+Enemy Movement
+* All mobs move once per player movement
+* wander until the player is spotted
+* Chase player until they can't see you
+
+Energy
+* Energy can be shared with friends
+* Energy is spent when moving or attacking
+* Need some amount of energy to escape
+
+Energy Cells
+* Owned by enemy AI initially
+* Need to be hacked first to access
+* Enemy AI will try to access energy tank when damaged
+
+Experience
+* XP bonus for sharing energy with friends
+* XP earned for killing robots
+* Can be spent to upgrade abilities
+	
+Energy usage
+	- Depends on robot. 
+	- Some can move more efficiently based on mass
+	- 
+	- Abilities can vary the amount of energy used
+	
+Character Classes
+Magus (Mage)
+	Energy Based Attacker
+	EMP stuns
+	"Healer" - Provide energy to other
+	Extracts energy more efficiently
+	Hovers
+	Teleport?
+	
+Hacker (Thief)
+	Short range attacks (weak)
+	Can cloak
+	Ability to disarm traps
+	Hack into terminals
+	Temporarily possess other robots
+	Plant bombs
+	
+Basher (Warrior)
+	Melee Attacks
+	Take lots of damage
+	Shield other robots
+	Localized AOE damage
+	
+Gunsmith (Tinkerer)
+	Can cloak
+	Can use firearms
+	Grapling Hook to traverse un traverable ledges
+	Can build helper robots

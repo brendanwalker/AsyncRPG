@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B2163789-430F-44C1-BB8F-34EBD0A923E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AsyncRPGSharedLib</RootNamespace>
+    <AssemblyName>AsyncRPGSharedLib</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>..\..\..\build\server\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>..\..\..\build\server\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DbLinq">
+      <HintPath>../../../lib/DbLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="DbLinq.Sqlite">
+      <HintPath>../../../lib/DbLinq.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="DbLinq.SqlServer">
+      <HintPath>../../../lib/DbLinq.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="LitJSON">
+      <HintPath>../../../lib/LitJSON.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>../../../lib/System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\GeometryFileWriter.cs" />
+    <Compile Include="Common\TypedFlags.cs" />
+    <Compile Include="Database\DatabaseBuilderMSSQL.cs" />
+    <Compile Include="Database\DatabaseBuilderSQLite.cs" />
+    <Compile Include="Database\DatabaseManager.cs" />
+    <Compile Include="Database\IDatabaseBuilder.cs" />
+    <Compile Include="Database\LinqToSql.cs" />
+    <Compile Include="Database\MobSpawnTableImporter.cs" />
+    <Compile Include="Database\MobTypeImporter.cs" />
+    <Compile Include="Database\RoomTemplateImporter.cs" />
+    <Compile Include="Environment\AABB2d.cs" />
+    <Compile Include="Environment\AABB3d.cs" />
+    <Compile Include="Environment\AI\Behavior\MobBehavior.cs" />
+    <Compile Include="Environment\AI\Behavior\MobBehaviorTree.cs" />
+    <Compile Include="Environment\AI\Behavior\MobCombat.cs" />
+    <Compile Include="Environment\AI\Behavior\MobPatrol.cs" />
+    <Compile Include="Environment\AI\Behavior\MobSearch.cs" />
+    <Compile Include="Environment\AI\Behavior\MobSelfPreserve.cs" />
+    <Compile Include="Environment\AI\Mob.cs" />
+    <Compile Include="Environment\AI\MobPerception.cs" />
+    <Compile Include="Environment\AI\MobSpawner.cs" />
+    <Compile Include="Environment\AI\MobSpawnTable.cs" />
+    <Compile Include="Environment\AI\MobType.cs" />
+    <Compile Include="Environment\AI\MobUpdate.cs" />
+    <Compile Include="Environment\DungeonLayout.cs" />
+    <Compile Include="Environment\EnergyTank.cs" />
+    <Compile Include="Environment\EnvironmentObject.cs" />
+    <Compile Include="Environment\IEnvironmentEntity.cs" />
+    <Compile Include="Environment\Player.cs" />
+    <Compile Include="Environment\Point2d.cs" />
+    <Compile Include="Environment\Point3d.cs" />
+    <Compile Include="Environment\Portal.cs" />
+    <Compile Include="Environment\Room.cs" />
+    <Compile Include="Environment\Trap.cs" />
+    <Compile Include="Environment\Treasure.cs" />
+    <Compile Include="Environment\Vector2d.cs" />
+    <Compile Include="Environment\Vector3d.cs" />
+    <Compile Include="Environment\World.cs" />
+    <Compile Include="Environment\WorldBuilder.cs" />
+    <Compile Include="Environment\WorldCache.cs" />
+    <Compile Include="Navigation\NavMesh.cs" />
+    <Compile Include="Navigation\NavRef.cs" />
+    <Compile Include="Navigation\PathComputer.cs" />
+    <Compile Include="Navigation\PathNode.cs" />
+    <Compile Include="Navigation\PathNodeHeap.cs" />
+    <Compile Include="Navigation\PathStep.cs" />
+    <Compile Include="Navigation\PotentiallyVisibleSet.cs" />
+    <Compile Include="Navigation\RoomKey.cs" />
+    <Compile Include="Navigation\UnionFind.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protocol\CharacterData.cs" />
+    <Compile Include="Protocol\EMail.cs" />
+    <Compile Include="Protocol\GameData.cs" />
+    <Compile Include="Protocol\GameEvents.cs" />
+    <Compile Include="Protocol\MobData.cs" />
+    <Compile Include="Protocol\Responses.cs" />
+    <Compile Include="Protocol\RoomData.cs" />
+    <Compile Include="Queries\AccountQueries.cs" />
+    <Compile Include="Queries\CharacterQueries.cs" />
+    <Compile Include="Queries\ConfigQueries.cs" />
+    <Compile Include="Queries\EnergyTankQueries.cs" />
+    <Compile Include="Queries\GameEventQueries.cs" />
+    <Compile Include="Queries\GameQueries.cs" />
+    <Compile Include="Queries\MobQueries.cs" />
+    <Compile Include="Queries\WorldQueries.cs" />
+    <Compile Include="RequestProcessors\AccountLoginRequestProcessor.cs" />
+    <Compile Include="RequestProcessors\AIMoveRequestProcessor.cs" />
+    <Compile Include="RequestProcessors\BindCharacterToGameRequestProcessor.cs" />
+    <Compile Include="RequestProcessors\CacheableObject.cs" />
+    <Compile Include="RequestProcessors\CharacterCreateRequestProcessor.cs" />
+    <Compile Include="RequestProcessors\CharacterDeleteRequestProcessor.cs" />
+    <Compile Include="RequestProcessors\CreateAccountRequestProcessor.cs" />
+    <Compile Include="RequestProcessors\DrainEnergyTankRequestProcessor.cs" />
+    <Compile Include="RequestProcessors\FullGameStateRequestProcessor.cs" />
+    <Compile Include="RequestProcessors\GameCreateRequestProcessor.cs" />
+    <Compile Include="RequestProcessors\GameDeleteRequestProcessor.cs" />
+    <Compile Include="RequestProcessors\GameListRequestProcessor.cs" />
+    <Compile Include="RequestProcessors\HackEnergyTankRequestProcessor.cs" />
+    <Compile Include="RequestProcessors\MoveRequestProcessor.cs" />
+    <Compile Include="RequestProcessors\PingCharacterRequestProcessor.cs" />
+    <Compile Include="RequestProcessors\PortalRequestProcessor.cs" />
+    <Compile Include="RequestProcessors\RequestCache.cs" />
+    <Compile Include="RequestProcessors\RequestProcessor.cs" />
+    <Compile Include="RequestProcessors\RoomRequestProcessor.cs" />
+    <Compile Include="RequestProcessors\RoomTemplateRequestProcessor.cs" />
+    <Compile Include="RequestProcessors\SpawnMobsRequestProcessor.cs" />
+    <Compile Include="Utility\CompressionUtilities.cs" />
+    <Compile Include="Utility\EnumUtilities.cs" />
+    <Compile Include="Utility\JSONUtilities.cs" />
+    <Compile Include="Utility\Logger.cs" />
+    <Compile Include="Utility\RNGUtilities.cs" />
+    <Compile Include="Web\Cache\DictionaryCacheAdapter.cs" />
+    <Compile Include="Web\Interfaces\ICacheAdapter.cs" />
+    <Compile Include="Web\Interfaces\IResponseAdapter.cs" />
+    <Compile Include="Web\Interfaces\ISessionAdapter.cs" />
+    <Compile Include="Web\Cache\RestSession.cs" />
+    <Compile Include="Web\Cache\RestSessionManager.cs" />
+    <Compile Include="Web\Modules\AccountModule.cs" />
+    <Compile Include="Web\Modules\AdminModule.cs" />
+    <Compile Include="Web\Modules\CharacterModule.cs" />
+    <Compile Include="Web\Modules\EnergyTankModule.cs" />
+    <Compile Include="Web\Modules\GameModule.cs" />
+    <Compile Include="Web\Modules\RestModule.cs" />
+    <Compile Include="Web\Modules\WorldModule.cs" />
+    <Compile Include="Web\RestRequest.cs" />
+    <Compile Include="Web\RestResponse.cs" />
+    <Compile Include="Web\RestUtilities.cs" />
+    <Compile Include="Web\WebServer.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>$(SolutionDir)..\..\scripts\build\pre_sharedlib_build.bat</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>$(SolutionDir)..\..\scripts\build\post_sharedlib_build.bat</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

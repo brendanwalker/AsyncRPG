@@ -1,0 +1,743 @@
+{
+    "commands": [
+        {
+            "command": "Account.asmx/AccountPlainTextLoginRequest",
+            "queryParameters": {
+                "username": "test",
+                "password": "password"
+            },
+            "result": {
+                "result": "Success"
+            }
+        },
+        {
+            "command": "Game.asmx/GetGameList",
+            "result": {
+                "game_list": [],
+                "result": "Success"
+            }
+        },
+        {
+            "command": "Game.asmx/CreateGame",
+            "queryParameters": {
+                "irc_port": 6667,
+                "irc_enabled": true,
+                "irc_encryption_enabled": true,
+                "game_name": "test",
+                "dungeon_size": 0,
+                "dungeon_difficulty": 1,
+                "irc_server": "irc.freenode.net"
+            },
+            "result": {
+                "result": "Success"
+            }
+        },
+        {
+            "command": "Game.asmx/GetGameList",
+            "result": {
+                "game_list": [
+                    {
+                        "character_names": [],
+                        "game_name": "test",
+                        "owner_account_name": "test",
+                        "game_id": 1,
+                        "owner_account_id": 1
+                    }
+                ],
+                "result": "Success"
+            }
+        },
+        {
+            "command": "Character.asmx/GetCharacterList",
+			"queryParameters":{
+				"username":"test"
+			},
+            "result": {
+                "character_list": [],
+                "result": "Success"
+            }
+        },
+        {
+            "command": "Character.asmx/CreateCharacter",
+            "queryParameters": {
+                "name": "Ike",
+                "picture_id": 0,
+                "archetype": 3,
+                "gender": 1
+            },
+            "result": {
+                "result": "Success"
+            }
+        },
+        {
+            "command": "Character.asmx/GetCharacterList",
+			"queryParameters":{
+				"username":"test"
+			},			
+            "result": {
+                "character_list": [
+                    {
+                        "room_y": 0,
+                        "archetype": 3,
+                        "game_id": -1,
+                        "gender": 1,
+                        "game_name": "",
+                        "picture_id": 0,
+                        "character_id": 1,
+                        "power_level": 1,
+                        "room_z": 0,
+                        "room_x": 0,
+                        "character_name": "Ike",
+                        "z": 0,
+                        "energy": 0,
+                        "x": 0,
+                        "angle": 0,
+                        "y": 0
+                    }
+                ],
+                "result": "Success"
+            }
+        },
+        {
+            "command": "Game.asmx/BindCharacterToGame",
+            "queryParameters": {
+                "character_id": 1,
+                "game_id": 1
+            },
+            "result": {
+                "result": "Success"
+            }
+        },
+        {
+            "command": "World.asmx/WorldGetFullGameStateRequest",
+            "queryParameters": {
+                "character_id": 1
+            },
+            "ignoreFields": [
+                "irc_encryption_key"
+            ],
+            "result": {
+				"irc_enabled": true,
+				"irc_server": "irc.freenode.net",
+				"irc_port": 6667,
+				"irc_encryption_key": "lN4nLQrhzQjh6sCDGQvZLJh4ATbiLkOLWkM0T18sHL8=",
+				"irc_encryption_enabled": true,
+				"characters": [
+					{
+						"game_id": 1,
+						"game_name": "test",
+						"character_id": 1,
+						"character_name": "Ike",
+						"archetype": 3,
+						"gender": 1,
+						"picture_id": 0,
+						"power_level": 1,
+						"energy": 0,
+						"room_x": 0,
+						"room_y": 0,
+						"room_z": 0,
+						"x": 0,
+						"y": 0,
+						"z": 0,
+						"angle": 0
+					}
+				],
+				"event_list": null,
+				"room_x": 0,
+				"room_y": 0,
+				"room_z": 0,
+				"world_x": 0,
+				"world_y": 0,
+				"world_z": 0,
+				"portals": [
+					{
+						"id": 26,
+						"target_portal_id": 46,
+						"x0": -1,
+						"y0": 5.5,
+						"x1": 1,
+						"y1": 6.5
+					},
+					{
+						"id": 27,
+						"target_portal_id": 32,
+						"x0": 11,
+						"y0": -2,
+						"x1": 12,
+						"y1": 0
+					},
+					{
+						"id": 28,
+						"target_portal_id": 23,
+						"x0": -12,
+						"y0": -2,
+						"x1": -11,
+						"y1": 0
+					},
+					{
+						"id": 29,
+						"target_portal_id": 13,
+						"x0": -1,
+						"y0": -8.5,
+						"x1": 1,
+						"y1": -7.5
+					}
+				],
+				"mobs": [],
+				"energyTanks": [
+					{
+						"energy_tank_id": 41,
+						"energy": 100,
+						"ownership": 0,
+						"room_x": 0,
+						"room_y": 0,
+						"room_z": 0,
+						"x": -10.5,
+						"y": 5
+					},
+					{
+						"energy_tank_id": 42,
+						"energy": 100,
+						"ownership": 0,
+						"room_x": 0,
+						"room_y": 0,
+						"room_z": 0,
+						"x": -10.5,
+						"y": -6
+					},
+					{
+						"energy_tank_id": 43,
+						"energy": 100,
+						"ownership": 0,
+						"room_x": 0,
+						"room_y": 0,
+						"room_z": 0,
+						"x": 9.5,
+						"y": -6
+					},
+					{
+						"energy_tank_id": 44,
+						"energy": 100,
+						"ownership": 0,
+						"room_x": 0,
+						"room_y": 0,
+						"room_z": 0,
+						"x": 9.5,
+						"y": 5
+					},
+					{
+						"energy_tank_id": 45,
+						"energy": 100,
+						"ownership": 0,
+						"room_x": 0,
+						"room_y": 0,
+						"room_z": 0,
+						"x": -0.5,
+						"y": -4
+					}
+				],
+				"data": {
+					"room_template_name": "EmptyRoomX+X-Y+Y-",
+					"objects": null
+				},
+				"result": "Success"
+			}
+        },
+        {
+            "command": "Character.asmx/MoveCharacter",
+            "queryParameters": {
+                "y": -4.71875,
+                "angle": 0,
+                "character_id": 1,
+                "z": 0,
+                "x": -3
+            },
+            "ignoreFields": [
+                "event_list[0].timestamp"
+            ],
+            "result": {
+                "result": "Success",
+                "event_list": [
+                    {
+                        "event_type": 3,
+                        "parameters": {
+                            "to_angle": 0,
+                            "room_x": 0,
+                            "to_z": 0,
+                            "room_y": 0,
+                            "to_x": -3,
+                            "room_z": 0,
+                            "from_y": 0,
+                            "from_z": 0,
+                            "from_angle": 0,
+                            "character_id": 1,
+                            "from_x": 0,
+                            "to_y": -4.71875
+                        },
+                        "timestamp": 63514108127430
+                    }
+                ]
+            }
+        },
+        {
+            "command": "EnergyTank.asmx/HackEnergyTank",
+            "queryParameters": {
+                "character_id": 1,
+                "energy_tank_id": 49
+            },
+            "ignoreFields": [
+                "event_list[0].timestamp",
+                "event_list[1].timestamp"
+            ],
+            "result": {
+				"event_list": [
+					{
+						"timestamp": 63535803044648,
+						"event_type": 3,
+						"parameters": {
+							"character_id": 1,
+							"room_x": 0,
+							"room_y": 0,
+							"room_z": 0,
+							"from_x": -3,
+							"from_y": -4.71875,
+							"from_z": 0,
+							"from_angle": 0,
+							"to_x": -0.5,
+							"to_y": -4.5,
+							"to_z": 0,
+							"to_angle": 90
+						}
+					},
+					{
+						"timestamp": 63535803044967,
+						"event_type": 16,
+						"parameters": {
+							"energy_tank_id": 49,
+							"energy_tank_faction": 2,
+							"hacker_id": 1,
+							"hacker_faction": 2
+						}
+					}
+				],
+				"result": "Success"
+			}
+        },
+        {
+            "command": "Character.asmx/PortalCharacter",
+            "queryParameters": {
+                "y": -7.5625,
+                "angle": 3,
+                "character_id": 1,
+                "z": 0,
+                "x": 0,
+                "portal_id": 29
+            },
+            "ignoreFields": [
+                "event_list[0].timestamp",
+                "event_list[1].timestamp",
+                "event_list[2].timestamp",
+				"event_list[3].timestamp",
+				"event_list[4].timestamp"
+            ],
+            "result": {
+				"event_list": [
+					{
+						"timestamp": 63535879934688,
+						"event_type": 3,
+						"parameters": {
+							"character_id": 1,
+							"room_x": 0,
+							"room_y": 0,
+							"room_z": 0,
+							"from_x": -0.5,
+							"from_y": -4.5,
+							"from_z": 0,
+							"from_angle": 0,
+							"to_x": 0,
+							"to_y": -7.5625,
+							"to_z": 0,
+							"to_angle": 3
+						}
+					},
+					{
+						"timestamp": 63535879934912,
+						"event_type": 6,
+						"parameters": {
+							"mob_state": {
+								"mob_id": 1,
+								"mob_type_name": "character_walker_blue",
+								"health": 100,
+								"energy": 100,
+								"game_id": 1,
+								"room_x": 0,
+								"room_y": -1,
+								"room_z": 0,
+								"x": -8,
+								"y": -0.5,
+								"z": 0,
+								"angle": 0
+							}
+						}
+					},
+					{
+						"timestamp": 63535879934927,
+						"event_type": 6,
+						"parameters": {
+							"mob_state": {
+								"mob_id": 2,
+								"mob_type_name": "character_tread_green",
+								"health": 100,
+								"energy": 100,
+								"game_id": 1,
+								"room_x": 0,
+								"room_y": -1,
+								"room_z": 0,
+								"x": 6,
+								"y": -0.5,
+								"z": 0,
+								"angle": 0
+							}
+						}
+					},
+					{
+						"timestamp": 63535879934941,
+						"event_type": 6,
+						"parameters": {
+							"mob_state": {
+								"mob_id": 3,
+								"mob_type_name": "character_walker_blue",
+								"health": 100,
+								"energy": 100,
+								"game_id": 1,
+								"room_x": 0,
+								"room_y": -1,
+								"room_z": 0,
+								"x": 6,
+								"y": -5,
+								"z": 0,
+								"angle": 0
+							}
+						}
+					},
+					{
+						"timestamp": 63535879934957,
+						"event_type": 5,
+						"parameters": {
+							"character_id": 1,
+							"from_room_x": 0,
+							"from_room_y": 0,
+							"from_room_z": 0,
+							"from_x": -0.5,
+							"from_y": -4.5,
+							"from_z": 0,
+							"from_angle": 0,
+							"to_room_x": 0,
+							"to_room_y": -1,
+							"to_room_z": 0,
+							"to_x": 0,
+							"to_y": 5.5,
+							"to_z": 0,
+							"to_angle": 3
+						}
+					}
+				],
+				"result": "Success"
+			}
+        },
+        {
+            "command": "World.asmx/GetRoomData",
+            "queryParameters": {
+                "room_x": 0,
+                "room_y": -1,
+                "game_id": 1,
+                "room_z": 0
+            },
+            "result": {
+				"room_x": 0,
+				"room_y": -1,
+				"room_z": 0,
+				"world_x": 0,
+				"world_y": -18,
+				"world_z": 0,
+				"portals": [
+					{
+						"id": 13,
+						"target_portal_id": 29,
+						"x0": -1,
+						"y0": 5.5,
+						"x1": 1,
+						"y1": 6.5
+					},
+					{
+						"id": 14,
+						"target_portal_id": 18,
+						"x0": 11,
+						"y0": -2,
+						"x1": 12,
+						"y1": 0
+					},
+					{
+						"id": 15,
+						"target_portal_id": 9,
+						"x0": -12,
+						"y0": -2,
+						"x1": -11,
+						"y1": 0
+					}
+				],
+				"mobs": [
+					{
+						"mob_id": 1,
+						"mob_type_name": "character_walker_blue",
+						"health": 100,
+						"energy": 100,
+						"game_id": 1,
+						"room_x": 0,
+						"room_y": -1,
+						"room_z": 0,
+						"x": -8,
+						"y": -0.5,
+						"z": 0,
+						"angle": 0
+					},
+					{
+						"mob_id": 2,
+						"mob_type_name": "character_tread_green",
+						"health": 100,
+						"energy": 100,
+						"game_id": 1,
+						"room_x": 0,
+						"room_y": -1,
+						"room_z": 0,
+						"x": 6,
+						"y": -0.5,
+						"z": 0,
+						"angle": 0
+					},
+					{
+						"mob_id": 3,
+						"mob_type_name": "character_walker_blue",
+						"health": 100,
+						"energy": 100,
+						"game_id": 1,
+						"room_x": 0,
+						"room_y": -1,
+						"room_z": 0,
+						"x": 6,
+						"y": -5,
+						"z": 0,
+						"angle": 0
+					}
+				],
+				"energyTanks": [
+					{
+						"energy_tank_id": 23,
+						"energy": 100,
+						"ownership": 0,
+						"room_x": 0,
+						"room_y": -1,
+						"room_z": 0,
+						"x": -10.5,
+						"y": 5
+					},
+					{
+						"energy_tank_id": 24,
+						"energy": 100,
+						"ownership": 0,
+						"room_x": 0,
+						"room_y": -1,
+						"room_z": 0,
+						"x": -10.5,
+						"y": -6
+					},
+					{
+						"energy_tank_id": 25,
+						"energy": 100,
+						"ownership": 0,
+						"room_x": 0,
+						"room_y": -1,
+						"room_z": 0,
+						"x": 9.5,
+						"y": -6
+					},
+					{
+						"energy_tank_id": 26,
+						"energy": 100,
+						"ownership": 0,
+						"room_x": 0,
+						"room_y": -1,
+						"room_z": 0,
+						"x": 9.5,
+						"y": 5
+					},
+					{
+						"energy_tank_id": 27,
+						"energy": 100,
+						"ownership": 0,
+						"room_x": 0,
+						"room_y": -1,
+						"room_z": 0,
+						"x": -0.5,
+						"y": 2.5
+					}
+				],
+				"data": {
+					"room_template_name": "EmptyRoomX+X-Y+",
+					"objects": null
+				},
+				"result": "Success"
+			}
+        },
+        {
+			"command": "Character.asmx/MoveCharacter",
+			"queryParameters": {
+				"y": -4.40625,
+				"angle": 3,
+				"character_id": 1,
+				"z": 0,
+				"x": -3.0625
+			},
+			"ignoreFields": [
+				"event_list[0].timestamp",
+				"event_list[1].timestamp",
+				"event_list[2].timestamp",
+				"event_list[3].timestamp",
+				"event_list[4].timestamp",
+				"event_list[5].timestamp",
+				"event_list[6].timestamp",
+				"event_list[7].timestamp",
+				"event_list[8].timestamp",
+				"event_list[9].timestamp"
+			],
+			"result": {
+				"event_list": [
+					{
+						"timestamp": 63535880423100,
+						"event_type": 3,
+						"parameters": {
+							"character_id": 1,
+							"room_x": 0,
+							"room_y": -1,
+							"room_z": 0,
+							"from_x": -0.5,
+							"from_y": -4.5,
+							"from_z": 0,
+							"from_angle": 3,
+							"to_x": -3.0625,
+							"to_y": -4.40625,
+							"to_z": 0,
+							"to_angle": 3
+						}
+					},
+					{
+						"timestamp": 63535880423222,
+						"event_type": 8,
+						"parameters": {
+							"mob_id": 1,
+							"room_x": 0,
+							"room_y": -1,
+							"room_z": 0,
+							"from_x": -8,
+							"from_y": -0.5,
+							"from_z": 0,
+							"from_angle": 0,
+							"to_x": -11,
+							"to_y": -1.5,
+							"to_z": 0,
+							"to_angle": 270
+						}
+					},
+					{
+						"timestamp": 63535880423245,
+						"event_type": 10,
+						"parameters": {
+							"mob_id": 1,
+							"dialog": "Soo bored..."
+						}
+					},
+					{
+						"timestamp": 63535880423260,
+						"event_type": 8,
+						"parameters": {
+							"mob_id": 2,
+							"room_x": 0,
+							"room_y": -1,
+							"room_z": 0,
+							"from_x": 6,
+							"from_y": -0.5,
+							"from_z": 0,
+							"from_angle": 0,
+							"to_x": 8,
+							"to_y": 1.5,
+							"to_z": 0,
+							"to_angle": 0
+						}
+					},
+					{
+						"timestamp": 63535880423275,
+						"event_type": 10,
+						"parameters": {
+							"mob_id": 2,
+							"dialog": "Soo bored..."
+						}
+					},
+					{
+						"timestamp": 63535880423293,
+						"event_type": 14,
+						"parameters": {
+							"mob_id": 3,
+							"energy_tank_id": 25
+						}
+					},
+					{
+						"timestamp": 63535880423307,
+						"event_type": 8,
+						"parameters": {
+							"mob_id": 3,
+							"room_x": 0,
+							"room_y": -1,
+							"room_z": 0,
+							"from_x": 6,
+							"from_y": -5,
+							"from_z": 0,
+							"from_angle": 0,
+							"to_x": 9.5,
+							"to_y": -6,
+							"to_z": 0,
+							"to_angle": 179.999984741211
+						}
+					},
+					{
+						"timestamp": 63535880423322,
+						"event_type": 16,
+						"parameters": {
+							"energy_tank_id": 25,
+							"energy_tank_faction": 1,
+							"hacker_id": 3,
+							"hacker_faction": 1
+						}
+					},
+					{
+						"timestamp": 63535880423336,
+						"event_type": 10,
+						"parameters": {
+							"mob_id": 3,
+							"dialog": "Energy Tank claimed for the AI Team!"
+						}
+					}
+				],
+				"result": "Success"
+			}
+		},
+        {
+            "command": "Account.asmx/AccountLogoutRequest",
+			"queryParameters":{
+				"username":"test"
+			},			
+            "result": {
+                "result": "Success"
+            }
+        }
+    ]
+}

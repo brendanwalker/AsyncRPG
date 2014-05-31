@@ -1,0 +1,75 @@
+RULE #1: ALWAYS read data from the DB into the cache before working with it. 
+Only read stuff back out of the cache if you're certain it's not stale in 
+the scope of your web service request.
+
+* Nav Mesh
+  - Test player path against AI vision cones, make stimuli at intersection
+
+* Energy Tanks
+  - Drain player energy when using portals
+  - AI Hack energy tanks
+  - AI Drain energy tanks
+
+* Perception System
+  - Energy Tanks
+    presumed ownership: update on sight
+    presumed quantity: update on inspection
+  - Friendly AI
+    location: update on sight
+    stimuli: seeing, hearing
+    health: update on sight
+    energy: update on sight
+  - Enemy AI
+    location: sight
+    type: sight
+  - Stimuli: sound (AI alerts), player cross line of AI sight
+
+* Combat/Patrol/Self Preserve/Search Behaviors
+  - Don't pick a patrol point on top of another mob
+* Inventory system backend 
+* Generate treasure boxes
+* Seed the world with loot
+* Inventory system UI 
+
+* Dont keep more than X events per game (not sure about this...)
+
+[Backlog]
+-High Level Game Features
+* Generate static environment objects 
+* Implement attack action for player
+* Update enemy AI when the player performs an action
+	* Server: Compute path finding distance when determining what actions are possible?
+		- Not sure what the rules are for energy usage are yet
+
+-UI
+* When pending query is running change the cursor to an busy icon (clock, hour glass, etc)
+* Use the up and down keys in the chat input to scroll through previous chat/commands sent
+* Fix UI layout to fit on the larger screen
+* Hook up new player sprite sheet
+
+-Client Infrastructure
+* Setup proper client Debug/Release configurations
+* Migrate the old widget classes to be new style widgets/widget groups
+* Change login string to support localhost
+
+-DB/WebService Infrastructure
+* Create an InProcess game server mode
+  - uses in-memory SqlLite database context
+  - entire DB serialized to/from file (json? sql commands?) on start-up and shutdown
+  - library loaded into Unity instance
+* Move DB migration code into the DBTool and use FluentMigrator lib
+* Write better initial DB setup instructions
+* Setup Cassini host application for standalone modes 
+* Switch over room table to using room_id colomn as primary key rather than x,y,z
+  - DBLinq does a terrible job with compound primary keys
+    - Constraints with compound primary keys wont work
+    - If no primary key is given it assumes the first colomn listed is the primary key
+
+* Switch web service callbacks to JsonService callbacks?
+        [JsonService(Namespace="Calendar", Name="Service")]
+        public class CalendarService
+        {
+                [JsonMethod(Name="searchDate")]
+				
+-Security
+* Make IRC password encrypted via public/private key pair 

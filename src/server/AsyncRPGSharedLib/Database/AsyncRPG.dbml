@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AsyncRPG" EntityNamespace="AsyncRPGLib" ContextNamespace="AsyncRPGLib" Class="AsyncRPGDataContext" BaseType="DbLinq.Data.Linq.DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="accounts" Member="Accounts">
+    <Type Name="Accounts">
+      <Column Name="account_id" Member="AccountID" Storage="_accountID" Type="System.Int32" DbType="int" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="creation_date" Member="CreationDate" Storage="_creationDate" Type="System.DateTime" DbType="datetime" CanBeNull="false" />
+      <Column Name="email_address" Member="EmailAddress" Storage="_emailAddress" Type="System.String" DbType="varchar(254)" CanBeNull="false" />
+      <Column Name="email_verification_key" Member="EmailVerificationKey" Storage="_emailVerificationKey" Type="System.String" DbType="varchar(32)" CanBeNull="false" />
+      <Column Name="ops_level" Member="OpsLevel" Storage="_opSlEvel" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="password_hash" Member="PasswordHash" Storage="_passwordHash" Type="System.String" DbType="varchar(32)" CanBeNull="false" />
+      <Column Name="salt" Member="Salt" Storage="_salt" Type="System.String" DbType="char(32)" CanBeNull="false" />
+      <Column Name="username" Member="UserName" Storage="_userName" Type="System.String" DbType="varchar(32)" CanBeNull="false" />
+      <Association Name="Accounts_Characters" Member="Characters" Storage="_characters" ThisKey="AccountID" OtherKey="AccountID" Type="Characters" />
+      <Association Name="Accounts_Games" Member="Games" Storage="_games" ThisKey="AccountID" OtherKey="OwnerAccountID" Type="Games" />
+    </Type>
+  </Table>
+  <Table Name="characters" Member="Characters">
+    <Type Name="Characters">
+      <Column Name="account_id" Member="AccountID" Storage="_accountID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="angle" Member="Angle" Storage="_angle" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Column Name="archetype" Member="Archetype" Storage="_archetype" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="character_id" Member="CharacterID" Storage="_characterID" Type="System.Int32" DbType="int" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="energy" Member="Energy" Storage="_energy" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="game_id" Member="GameID" Storage="_gameID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="gender" Member="Gender" Storage="_gender" Type="System.Boolean" DbType="bit" CanBeNull="false" />
+      <Column Name="health" Member="Health" Storage="_health" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="last_ping_time" Member="LastPingTime" Storage="_lastPingTime" Type="System.DateTime" DbType="datetime" CanBeNull="false" />
+      <Column Name="last_sent_event_id" Member="LastSentEventID" Storage="_lastSentEventID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="name" Member="Name" Storage="_name" Type="System.String" DbType="varchar(32)" CanBeNull="false" />
+      <Column Name="new_events_posted" Member="NewEventsPosted" Storage="_newEventsPosted" Type="System.Boolean" DbType="bit" CanBeNull="false" />
+      <Column Name="picture_id" Member="PictureID" Storage="_pictureID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="power_level" Member="PowerLevel" Storage="_powerLevel" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="room_x" Member="RoomX" Storage="_roomX" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="room_y" Member="RoomY" Storage="_roomY" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="room_z" Member="RoomZ" Storage="_roomZ" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="x" Member="X" Storage="_x" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Column Name="y" Member="Y" Storage="_y" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Column Name="z" Member="Z" Storage="_z" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Association Name="Accounts_Characters" Member="Accounts" Storage="_accounts" ThisKey="AccountID" OtherKey="AccountID" Type="Accounts" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="config" Member="Configs">
+    <Type Name="Config">
+      <Column Name="app_debug_url" Member="AppDebugURL" Storage="_appDebugUrl" Type="System.String" DbType="varchar(256)" CanBeNull="false" />
+      <Column Name="app_url" Member="AppURL" Storage="_appUrl" Type="System.String" DbType="varchar(256)" CanBeNull="false" />
+      <Column Name="client_url" Member="ClientURL" Storage="_clientUrl" Type="System.String" DbType="varchar(256)" CanBeNull="false" />
+      <Column Name="email_address" Member="EmailAddress" Storage="_emailAddress" Type="System.String" DbType="varchar(256)" CanBeNull="false" />
+      <Column Name="email_host" Member="EmailHost" Storage="_emailHost" Type="System.String" DbType="varchar(256)" CanBeNull="false" />
+      <Column Name="email_password" Member="EmailPassword" Storage="_emailPassword" Type="System.String" DbType="varchar(32)" CanBeNull="false" />
+      <Column Name="email_port" Member="EmailPort" Storage="_emailPort" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="email_username" Member="EmailUserName" Storage="_emailUserName" Type="System.String" DbType="varchar(32)" CanBeNull="false" />
+      <Column Name="id" Member="ID" Storage="_id" Type="System.Int32" DbType="int" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="irc_port" Member="IrcPort" Storage="_ircPort" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="irc_server" Member="IrcServer" Storage="_ircServer" Type="System.String" DbType="varchar(128)" CanBeNull="false" />
+      <Column Name="version" Member="Version" Storage="_version" Type="System.Int32" DbType="int" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="energy_tanks" Member="EnergyTanks">
+    <Type Name="EnergyTanks">
+      <Column Name="energy" Member="Energy" Storage="_energy" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="energy_tank_id" Member="EnergyTankID" Storage="_energyTankID" Type="System.Int32" DbType="int" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="game_id" Member="GameID" Storage="_gameID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="ownership" Member="Ownership" Storage="_ownership" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="room_x" Member="RoomX" Storage="_roomX" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="room_y" Member="RoomY" Storage="_roomY" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="room_z" Member="RoomZ" Storage="_roomZ" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="x" Member="X" Storage="_x" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Column Name="y" Member="Y" Storage="_y" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Column Name="z" Member="Z" Storage="_z" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Association Name="Games_EnergyTanks" Member="Games" Storage="_games" ThisKey="GameID" OtherKey="GameID" Type="Games" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="game_events" Member="GameEvents">
+    <Type Name="GameEvents">
+      <Column Name="event_id" Member="EventID" Storage="_eventID" Type="System.Int32" DbType="int" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="event_time" Member="EventTime" Storage="_eventTime" Type="System.DateTime" DbType="datetime" CanBeNull="false" />
+      <Column Name="event_type" Member="EventType" Storage="_eventType" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="game_id" Member="GameID" Storage="_gameID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="json_parameters" Member="JsonParameters" Storage="_jsOnParameters" Type="System.String" DbType="varchar(512)" CanBeNull="false" />
+      <Association Name="Games_GameEvents" Member="Games" Storage="_games" ThisKey="GameID" OtherKey="GameID" Type="Games" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="games" Member="Games">
+    <Type Name="Games">
+      <Column Name="dungeon_difficulty" Member="DungeonDifficulty" Storage="_dungeonDifficulty" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="dungeon_size" Member="DungeonSize" Storage="_dungeonSize" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="game_id" Member="GameID" Storage="_gameID" Type="System.Int32" DbType="int" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="irc_enabed" Member="IrcEnabed" Storage="_ircEnAbed" Type="System.Boolean" DbType="bit" CanBeNull="false" />
+      <Column Name="irc_encryption_enabed" Member="IrcEncryptionEnabed" Storage="_ircEncryptionEnAbed" Type="System.Boolean" DbType="bit" CanBeNull="false" />
+      <Column Name="irc_encryption_key" Member="IrcEncryptionKey" Storage="_ircEncryptionKey" Type="System.String" DbType="char(44)" CanBeNull="false" />
+      <Column Name="irc_port" Member="IrcPort" Storage="_ircPort" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="irc_server" Member="IrcServer" Storage="_ircServer" Type="System.String" DbType="varchar(128)" CanBeNull="false" />
+      <Column Name="name" Member="Name" Storage="_name" Type="System.String" DbType="varchar(64)" CanBeNull="false" />
+      <Column Name="owner_account_id" Member="OwnerAccountID" Storage="_ownerAccountID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Association Name="Games_EnergyTanks" Member="EnergyTanks" Storage="_energyTanks" ThisKey="GameID" OtherKey="GameID" Type="EnergyTanks" />
+      <Association Name="Games_GameEvents" Member="GameEvents" Storage="_gameEvents" ThisKey="GameID" OtherKey="GameID" Type="GameEvents" />
+      <Association Name="Games_Loot" Member="Loot" Storage="_loot" ThisKey="GameID" OtherKey="GameID" Type="Loot" />
+      <Association Name="Games_Mobs" Member="Mobs" Storage="_mobs" ThisKey="GameID" OtherKey="GameID" Type="Mobs" />
+      <Association Name="Games_MobSpAwnERS" Member="MobSpawners" Storage="_mobSpAwnErs" ThisKey="GameID" OtherKey="GameID" Type="MobSpawners" />
+      <Association Name="Games_Portals" Member="Portals" Storage="_portals" ThisKey="GameID" OtherKey="GameID" Type="Portals" />
+      <Association Name="Games_Rooms" Member="Rooms" Storage="_rooms" ThisKey="GameID" OtherKey="GameID" Type="Rooms" />
+      <Association Name="Accounts_Games" Member="Accounts" Storage="_accounts" ThisKey="OwnerAccountID" OtherKey="AccountID" Type="Accounts" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="loot" Member="Loot">
+    <Type Name="Loot">
+      <Column Name="game_id" Member="GameID" Storage="_gameID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="loot_count" Member="LootCount" Storage="_lootCount" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="loot_id" Member="LootID" Storage="_lootID" Type="System.Int32" DbType="int" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="loot_type" Member="LootType" Storage="_lootType" Type="System.String" DbType="varchar(32)" CanBeNull="false" />
+      <Column Name="room_x" Member="RoomX" Storage="_roomX" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="room_y" Member="RoomY" Storage="_roomY" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="room_z" Member="RoomZ" Storage="_roomZ" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="x" Member="X" Storage="_x" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Column Name="y" Member="Y" Storage="_y" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Column Name="z" Member="Z" Storage="_z" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Association Name="Games_Loot" Member="Games" Storage="_games" ThisKey="GameID" OtherKey="GameID" Type="Games" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="mobs" Member="Mobs">
+    <Type Name="Mobs">
+      <Column Name="ai_data" Member="AiData" Storage="_aiData" Type="System.String" DbType="text" CanBeNull="false" />
+      <Column Name="angle" Member="Angle" Storage="_angle" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Column Name="energy" Member="Energy" Storage="_energy" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="game_id" Member="GameID" Storage="_gameID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="health" Member="Health" Storage="_health" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="mob_id" Member="MobID" Storage="_mobID" Type="System.Int32" DbType="int" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="mob_type_id" Member="MobTypeID" Storage="_mobTypeID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="room_x" Member="RoomX" Storage="_roomX" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="room_y" Member="RoomY" Storage="_roomY" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="room_z" Member="RoomZ" Storage="_roomZ" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="x" Member="X" Storage="_x" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Column Name="y" Member="Y" Storage="_y" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Column Name="z" Member="Z" Storage="_z" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Association Name="Games_Mobs" Member="Games" Storage="_games" ThisKey="GameID" OtherKey="GameID" Type="Games" IsForeignKey="true" />
+      <Association Name="MobTypes_Mobs" Member="MobTypes" Storage="_mobTypes" ThisKey="MobTypeID" OtherKey="MobTypeID" Type="MobTypes" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="mob_spawners" Member="MobSpawners">
+    <Type Name="MobSpawners">
+      <Column Name="game_id" Member="GameID" Storage="_gameID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="mob_spawner_id" Member="MobSpawnerID" Storage="_mobSpawnerID" Type="System.Int32" DbType="int" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="mob_spawner_table_id" Member="MobSpawnerTableID" Storage="_mobSpawnerTableID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="random_seed" Member="RandomSeed" Storage="_randomSeed" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="remaining_spawn_count" Member="RemainingSpawnCount" Storage="_remainingSpawnCount" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="room_x" Member="RoomX" Storage="_roomX" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="room_y" Member="RoomY" Storage="_roomY" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="room_z" Member="RoomZ" Storage="_roomZ" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="x" Member="X" Storage="_x" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Column Name="y" Member="Y" Storage="_y" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Column Name="z" Member="Z" Storage="_z" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Association Name="MobSpawnTables_MobSpAwnERS" Member="MobSpawnTables" Storage="_mobSpawnTables" ThisKey="MobSpawnerTableID" OtherKey="MobSpawnTableID" Type="MobSpawnTables" IsForeignKey="true" />
+      <Association Name="Games_MobSpAwnERS" Member="Games" Storage="_games" ThisKey="GameID" OtherKey="GameID" Type="Games" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="mob_spawn_table_entries" Member="MobSpawnTableEntries">
+    <Type Name="MobSpawnTableEntries">
+      <Column Name="mob_spawn_table_entry_id" Member="MobSpawnTableEntryID" Storage="_mobSpawnTableEntryID" Type="System.Int32" DbType="int" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="mob_spawn_table_id" Member="MobSpawnTableID" Storage="_mobSpawnTableID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="reference_id" Member="ReferenceID" Storage="_referenceID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="reference_is_mob_type" Member="ReferenceIsMobType" Storage="_referenceIsMobType" Type="System.Boolean" DbType="bit" CanBeNull="false" />
+      <Column Name="weight" Member="Weight" Storage="_weight" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Association Name="MobSpawnTables_MobSpawnTableEntries" Member="MobSpawnTables" Storage="_mobSpawnTables" ThisKey="MobSpawnTableID" OtherKey="MobSpawnTableID" Type="MobSpawnTables" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="mob_spawn_tables" Member="MobSpawnTables">
+    <Type Name="MobSpawnTables">
+      <Column Name="mob_spawn_table_id" Member="MobSpawnTableID" Storage="_mobSpawnTableID" Type="System.Int32" DbType="int" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="mob_spawn_table_name" Member="MobSpawnTableName" Storage="_mobSpawnTableName" Type="System.String" DbType="varchar(32)" CanBeNull="false" />
+      <Association Name="MobSpawnTables_MobSpAwnERS" Member="MobSpawners" Storage="_mobSpAwnErs" ThisKey="MobSpawnTableID" OtherKey="MobSpawnerTableID" Type="MobSpawners" />
+      <Association Name="MobSpawnTables_MobSpawnTableEntries" Member="MobSpawnTableEntries" Storage="_mobSpawnTableEntries" ThisKey="MobSpawnTableID" OtherKey="MobSpawnTableID" Type="MobSpawnTableEntries" />
+    </Type>
+  </Table>
+  <Table Name="mob_types" Member="MobTypes">
+    <Type Name="MobTypes">
+      <Column Name="mob_type_data" Member="MobTypeData" Storage="_mobTypeData" Type="System.String" DbType="text" CanBeNull="false" />
+      <Column Name="mob_type_id" Member="MobTypeID" Storage="_mobTypeID" Type="System.Int32" DbType="int" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="MobTypes_Mobs" Member="Mobs" Storage="_mobs" ThisKey="MobTypeID" OtherKey="MobTypeID" Type="Mobs" />
+    </Type>
+  </Table>
+  <Table Name="portals" Member="Portals">
+    <Type Name="Portals">
+      <Column Name="bbox_x0" Member="BboxX0" Storage="_bbOxX0" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Column Name="bbox_x1" Member="BboxX1" Storage="_bbOxX1" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Column Name="bbox_y0" Member="BboxY0" Storage="_bbOxY0" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Column Name="bbox_y1" Member="BboxY1" Storage="_bbOxY1" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Column Name="game_id" Member="GameID" Storage="_gameID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="portal_id" Member="PortalID" Storage="_portalID" Type="System.Int32" DbType="int" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="portal_type" Member="PortalType" Storage="_portalType" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="room_side" Member="RoomSide" Storage="_roomSide" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="room_x" Member="RoomX" Storage="_roomX" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="room_y" Member="RoomY" Storage="_roomY" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="room_z" Member="RoomZ" Storage="_roomZ" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="target_portal_id" Member="TargetPortalID" Storage="_targetPortalID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Association Name="Games_Portals" Member="Games" Storage="_games" ThisKey="GameID" OtherKey="GameID" Type="Games" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="rooms" Member="Rooms">
+    <Type Name="Rooms">
+      <Column Name="game_id" Member="GameID" Storage="_gameID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="random_seed" Member="RandomSeed" Storage="_randomSeed" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="room_id" Member="RoomID" Storage="_roomID" Type="System.Int32" DbType="int" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="static_data" Member="StaticData" Storage="_staticData" Type="System.String" DbType="text" CanBeNull="false" />
+      <Column Name="x" Member="X" Storage="_x" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="y" Member="Y" Storage="_y" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="z" Member="Z" Storage="_z" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Association Name="Games_Rooms" Member="Games" Storage="_games" ThisKey="GameID" OtherKey="GameID" Type="Games" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="room_templates" Member="RoomTemplates">
+    <Type Name="RoomTemplates">
+      <Column Name="compressed_nav_mesh" Member="CompressedNavMesh" Storage="_compressedNaVMesh" Type="System.Byte[]" DbType="blob" CanBeNull="false" />
+      <Column Name="compressed_visibility" Member="CompressedVisibility" Storage="_compressedVisibility" Type="System.Byte[]" DbType="blob" CanBeNull="false" />
+      <Column Name="id" Member="ID" Storage="_id" Type="System.Int32" DbType="int" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Member="Name" Storage="_name" Type="System.String" DbType="varchar(256)" CanBeNull="false" />
+      <Column Name="xml" Member="XML" Storage="_xml" Type="System.String" DbType="text" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

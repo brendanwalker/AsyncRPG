@@ -1,0 +1,31 @@
+##################
+# Unity ignores:
+#
+# !!! WARNING !!!
+#
+# Åc you MUST convert Unity to using Metafiles *before* you start using this
+#  .gitignore file, or you WILL lose data!
+#
+
+Temp/
+Obj/
+UnityGenerated/
+Library/
+
+# include meta files
+!*.*.meta
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+ExportedObj/
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+ 

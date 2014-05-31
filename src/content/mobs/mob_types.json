@@ -1,0 +1,268 @@
+{
+    "mob_types_set": [
+        {
+            "mob_type_name": "character_tread_gray",
+			"label":"TreadBot v0",
+            "max_health": 100,
+            "max_energy": 100,
+			"speed": 1,
+			"vision_cone":
+			{
+				"distance":5,
+				"angle":90
+			},
+			"perception":
+			{
+				"orphan_turn_timeout":1,
+				"saliance_distance_weight":1.0,
+				"saliance_energy_weight":1.0,
+				"saliance_health_weight":1.0,
+				"saliance_status_weight":1.0
+			},
+			"abilities":
+			{
+				"energy_tank_drain_per_turn":50
+			}			
+        },
+        {
+            "mob_type_name": "character_tread_green",
+			"label":"TreadBot v1",
+            "max_health": 100,
+            "max_energy": 100,
+			"speed": 1,
+			"vision_cone":
+			{
+				"distance":5,
+				"angle":90
+			},		
+			"perception":
+			{
+				"orphan_turn_timeout":1,
+				"saliance_distance_weight":1.0,
+				"saliance_energy_weight":1.0,
+				"saliance_health_weight":1.0,
+				"saliance_status_weight":1.0
+			},
+			"abilities":
+			{
+				"energy_tank_drain_per_turn":50
+			}			
+        },
+        {
+            "mob_type_name": "character_floater_gray",
+			"label":"FloaterBot v0",
+            "max_health": 100,
+            "max_energy": 100,
+			"speed": 1,
+			"vision_cone":
+			{
+				"distance":5,
+				"angle":360
+			},	
+			"perception":
+			{
+				"orphan_turn_timeout":1,
+				"saliance_distance_weight":1.0,
+				"saliance_energy_weight":1.0,
+				"saliance_health_weight":1.0,
+				"saliance_status_weight":1.0
+			},
+			"abilities":
+			{
+				"energy_tank_drain_per_turn":50
+			}			
+        },
+        {
+            "mob_type_name": "character_floater_tan",
+			"label":"FloaterBot v1",
+            "max_health": 100,
+            "max_energy": 100,
+			"speed": 1,
+			"vision_cone":
+			{
+				"distance":5,
+				"angle":360
+			},		
+			"perception":
+			{
+				"orphan_turn_timeout":1,
+				"saliance_distance_weight":1.0,
+				"saliance_energy_weight":1.0,
+				"saliance_health_weight":1.0,
+				"saliance_status_weight":1.0
+			},
+			"abilities":
+			{
+				"energy_tank_drain_per_turn":50
+			}			
+        },		
+        {
+            "mob_type_name": "character_floater_blue",
+			"label":"FloaterBot v2",
+            "max_health": 100,
+            "max_energy": 100,
+			"speed": 1,
+			"vision_cone":
+			{
+				"distance":5,
+				"angle":360
+			},		
+			"perception":
+			{
+				"orphan_turn_timeout":1,
+				"saliance_distance_weight":1.0,
+				"saliance_energy_weight":1.0,
+				"saliance_health_weight":1.0,
+				"saliance_status_weight":1.0
+			},
+			"abilities":
+			{
+				"energy_tank_drain_per_turn":50
+			}			
+        },
+        {
+            "mob_type_name": "character_floater_purple",
+			"label":"FloaterBot v3",
+            "max_health": 100,
+            "max_energy": 100,
+			"speed": 1,
+			"vision_cone":
+			{
+				"distance":5,
+				"angle":360
+			},		
+			"perception":
+			{
+				"orphan_turn_timeout":1,
+				"saliance_distance_weight":1.0,
+				"saliance_energy_weight":1.0,
+				"saliance_health_weight":1.0,
+				"saliance_status_weight":1.0
+			},
+			"abilities":
+			{
+				"energy_tank_drain_per_turn":50
+			}			
+        },
+        {
+            "mob_type_name": "character_walker_gray",
+			"label":"WalkerBot v0",
+            "max_health": 100,
+            "max_energy": 100,
+			"speed": 1,
+			"vision_cone":
+			{
+				"distance":4,
+				"angle":180
+			},	
+			"perception":
+			{
+				"orphan_turn_timeout":1,
+				"saliance_distance_weight":1.0,
+				"saliance_energy_weight":1.0,
+				"saliance_health_weight":1.0,
+				"saliance_status_weight":1.0
+			},
+			"abilities":
+			{
+				"energy_tank_drain_per_turn":50
+			}			
+        },
+        {
+            "mob_type_name": "character_walker_tan",
+			"label":"WalkerBot v1",
+            "max_health": 100,
+            "max_energy": 100,
+			"speed": 1,
+			"vision_cone":
+			{
+				"distance":4,
+				"angle":180
+			},
+			"perception":
+			{
+				"orphan_turn_timeout":1,
+				"saliance_distance_weight":1.0,
+				"saliance_energy_weight":1.0,
+				"saliance_health_weight":1.0,
+				"saliance_status_weight":1.0
+			},
+			"abilities":
+			{
+				"energy_tank_drain_per_turn":50
+			}
+        },
+        {
+            "mob_type_name": "character_walker_blue",
+			"label":"WalkerBot v2",
+            "max_health": 100,
+            "max_energy": 100,
+			"speed": 1,
+			"vision_cone":
+			{
+				"distance":4,
+				"angle":180
+			},	
+			"perception":
+			{
+				"orphan_turn_timeout":1,
+				"saliance_distance_weight":1.0,
+				"saliance_energy_weight":1.0,
+				"saliance_health_weight":1.0,
+				"saliance_status_weight":1.0
+			},
+			"abilities":
+			{
+				"energy_tank_drain_per_turn":50
+			}			
+        },
+        {
+            "mob_type_name": "character_warrior_gray",
+			"label":"WarriorBot v0",
+            "max_health": 100,
+            "max_energy": 100,
+			"speed": 1,
+			"vision_cone":
+			{
+				"distance":7,
+				"angle":60
+			},		
+			"perception":
+			{
+				"orphan_turn_timeout":1,
+				"saliance_distance_weight":1.0,
+				"saliance_energy_weight":1.0,
+				"saliance_health_weight":1.0,
+				"saliance_status_weight":1.0
+			},
+			"abilities":
+			{
+				"energy_tank_drain_per_turn":50
+			}			
+        },			
+        {
+            "mob_type_name": "character_warrior_purple",
+			"label":"WarriorBot v3",
+            "max_health": 100,
+            "max_energy": 100,
+			"speed": 1,
+			"vision_cone":
+			{
+				"distance":7,
+				"angle":60
+			},			
+			"perception":
+			{
+				"orphan_turn_timeout":1,
+				"saliance_distance_weight":1.0,
+				"saliance_energy_weight":1.0,
+				"saliance_health_weight":1.0,
+				"saliance_status_weight":1.0
+			},
+			"abilities":
+			{
+				"energy_tank_drain_per_turn":50
+			}			
+        }
+    ]
+}

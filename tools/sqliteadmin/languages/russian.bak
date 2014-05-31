@@ -1,0 +1,325 @@
+;#############################
+;Russian Translation by Ormada
+;#############################
+
+[frmMain]
+tsSQL=SQL Запрос
+tsResult=Результат
+tsEdit=Редактирование данных
+pEditTop=
+lblTable=Таблица:
+lblFilterField=Фильтр для Поля:
+lblFilter=Фильтр:
+miDatabase=База данных
+miNew=Новая
+miOpen=Открыть
+miCleanUp=Очистить
+miClose=Закрыть
+miCreationSQL=SQL на создание БД 
+miMigrate=Пересохранить в  SQLite3
+miRecentList=История
+miExit=Выход
+miTable=Таблицы
+miNewTable=Новая
+miEditTable=Редактировать
+miDeleteTable=Удалить
+miIndex=Индекс
+miNewIndex=Новый
+miEditIndex=Редактировать
+miDeleteIndex=Удалить
+miView=Представление
+miNewView=Новое
+miEditView=Редактировать
+miDeleteView=Удалить
+miTrigger=Триггер
+miNewTrigger=Новый
+miEditTrigger=Редактировать
+miDeleteTrigger=Удалить
+Abfrage1=Запрос
+miAddQuery=Добавить
+miShowQuery=Открыть
+miSaveQueryMain=Сохранить
+miDelQuery=Удалить
+miOpenSQL=Выполнить с возвратом результата (F9)
+miExecSQL=Выполнить без возврата результата (F8)
+miInsertInNewViewMain=Использовать для создания Представления
+miInsertInNewTriggerMain=Использовать для создания Триггера
+Daten1=Данные
+miExport=Экспорт
+miSendToExcel=Передать в Excel
+miImport=Импорт данных
+miHelp=Помощь
+miInfo=Информация
+Fehlerbericht1=Лог
+pmiRefresh=Обновить
+pmiShowSQL=Показать SQL
+pmiNewTable=Создание Таблицы
+pmiEditTable=Редактировать Таблицу
+pmiDelTable=Удалить Таблицу
+pmiNewIndex=Создать Индекс
+pmiEditIndex=Редактировать Индекс
+pmiDelIndex=Удалить Индекс
+pmiNewView=Создание Представления
+pmiEditView=Редактировать Представление
+pmiDelView=Удалить Представление
+pmiNewTrigger=Создание Триггера
+pmiEditTrigger=Редактировать Триггер
+pmiDelTrigger=Удалить Триггер
+pmiFindQuery=Найти Запрос
+pmiAddQuery=Добавить Запрос
+pmiShowQuery=Открыть Запрос
+pmiDelQuery=Удалить Запрос
+miAddTab=Создать новый Запрос
+miSaveQuery=Сохранить в БД
+miSaveToFile=Сохранить в файл
+miUndo=Отменить
+miRedo=Повторить
+miCut=Вырезать
+miCopy=Копировать
+miPaste=Вставить
+miSelAll=Выделить всё
+miCopyToDelphi=Копировать как Delphi код
+miComment=Закоментировать/Раскоментировать текст
+miInsertInNewView=Использовать в новом Представлении
+miInsertInNewTrigger=Использовать в новом Триггере
+miDeleteTab=Закрыть Запрос
+miMemo=Показывать Memo
+miPicture=Показывать Изображения
+tbbNewDatabase=Создать БД
+tbbOpenDatabase=Открыть ( из Истории ) БД
+tbbCleanUp=Database CleanUp
+tbbCloseDatabase=Закрыть БД
+tbbNewTable=Создание Таблицы
+tbbEditTable=Редактировать Таблицу
+tbbDeleteTable=Удалить Таблицу
+tbbNewIndex=Создание Индекса
+tbbEditIndex=Редактировать Индекс
+tbbDeleteIndex=Удалить Индекс
+tbbNewView=Создание Представления
+tbbEditView=Редактировать Представление
+tbbDeleteView=Удалить Представление
+tbbNewTrigger=Создание Триггера
+tbbEditTrigger=Редактировать Триггер
+tbbDeleteTrigger=Удалить Триггер
+tbbAddSQL=Добавить новый Запрос
+tbbSaveSQL=Сохранить Запрос в БД
+tbbOpenSQL=Выполнить с возвратом результатом (select) F9
+tbbExecSQL=Выполнить без возврата результата (insert,update,delete (DML)) F8 
+
+tbbViewHierarchy=Иерархичное представление
+tbbShowTables=Показывать Таблицы
+tbbShowFields=Показывать Поля
+tbbShowTriggers=Показывать Триггеры
+tbbShowIndexes=Показывать Индексы
+tbbShowViews=Показывать Представления
+tbbShowSysEntrys=Показывать системные переменные
+tbbShowQueries=Показать Запросы
+
+[frmTable]
+lblTablename=Имя:
+gbFields="     Поля"
+btnAdd=Добавить
+btnDel=Удалить
+btnChange=Редактировать
+btnOK=Создать
+btnCancel=Отмена
+btnPrimaryKey=Первичный ключ
+
+[frmField]
+lblFieldName=Имя:
+lblFieldType=Тип:
+lblDefaultValue="По умолчанию":
+cbUnique=Уникальное
+cbNotNull=Не NULL
+cbPrimaryKey=Первичный ключ
+cbAutoInc=Автоматическое увеличение
+btnAdd=Добавить
+btnCancel=Отмена
+
+[frmIndex]
+lblIndexName=Имя:
+lblTable=Таблица:
+cbUnique=Уникальное
+gbFields="     Поля"
+lblSrcFields=Доступные Поля:
+lblDestFields=Выбранные Поля:
+btnCreate=Создать
+btnCancel=Отмена
+
+[frmView]
+lblViewName=Имя:
+gbSQL="     SQL Запрос"
+btnCreate=Создать
+btnCancel=Отменить
+[frmPicture]
+btnPic=Изменить Изображение
+btnDel=Удалить Изображение
+btnSave=Сохранить Изображение как
+
+[frmTrigger]
+lblTriggername=Имя:
+tsEvent=События
+lblTable=Таблица:
+lblView=Представление:
+gbFields="     Поля"
+lblSrcFields=Доступные Поля:
+lblDestFields=Выбранные Поля:
+gbTriggerEvent=Событие
+rbBefore=Перед
+rbAfter=После
+rbInsteadOf=Вместо
+gbEvents=Событие
+gbFOR=Действие
+rbEachRow=Каждая строка
+rbEachStatement=Каждое утверждение
+tsSQL=SQL Триггера
+gbTriggerSQL="     SQL код исполняемый в Событии Триггера (OLD. / NEW. = Ref)"
+lblCondition=Условие:
+btnCreate=Создать
+btnCancel=Отменить
+
+[frmImport]
+Caption=Импорт Данных
+gbMapping=Поля
+lblSourceFields=Исходные Поля:
+lblTargetFields=Целевые Поля:
+lblDestTable=Целевая Таблица:
+cbClearTable=Очистить Таблицу перед Импортом
+btnLoadFile=Открыть Файл
+btnImport=Импорт Данных
+btnClose=Закрыть
+
+[frmLog]
+Caption=Лог ошибок
+
+[frmMemoEdit]
+Caption=Редактировать Memo 
+
+[MessageStrings]
+lngInfo=Информация
+lngWarning=Предупреждение:
+lngCreate=Создать
+lngEdit=Сохранить
+lngAdd=Добавить
+
+lngNameAlreadyExists=Имя уже используется!
+lngInvalidChars=Имя не должно содержать 'sqlite_' префикс, спец.символы или пробелы! 
+lngEnterSQLSource=Введите SQL запрос
+
+lngCreateView=Создание Представления
+lngEditView=Редактировать Представление
+lngEnterViewName=Введите Имя для Представления!
+lngEnterTriggerName=Введите Имя Триггера!
+lngSelectTable=Выберите Таблицу!
+lngSelectView=Выберите Представление!
+lngSelectEvent=Выберите Событие!
+lngSelectFields=Выбериет Поля!
+lngSemiNotFound=No semicolon after the SQL statement found! 
+lngCreateTrigger=Создание Триггера
+lngEditTrigger=Редактировать Триггер
+lngBlobFileSize=Из соображений сохранности максимальный размер Поля ограниченon до 500kb. SQLite 2.8 x поддерживает максимально. 1 MB данных в строке
+lngSeperator=Разделитель
+lngEnterSeperatorChar=Введите символ Разделителя!
+lngContainsHeaderFieldNames=Первый столбец содержить Имена Полей?
+lngFieldAlreadyChoosen=Поле уже выбрано!
+lngSeperatedValues=Файл с разделителями значений
+lngEnterFieldName=Введите Имя Поля!
+lngEnterFieldType=Введите или выбериете Тип Поля!
+lngPKAlreadyExist=Первичный ключ уже назначен!
+lngFieldSize=Размер Поля:
+lngEnterFieldSize=Введите Размер Поля:
+lngEditField=Редактирование Поля
+lngAddField=Добавить Поле
+lngEnterIndexName=Введите Имя Индекса!
+lngEditIndex=Редактировать Индекс
+lngCreateIndex=Создать Индекс
+lngEnterTableName=Введите Имя Таблицы!
+lngAddTableFields=Добавьте Таблице Поля!
+lngEditTable=Редактирование Таблицы
+lngCreateTable=Создание Таблицы
+lngTableFieldName=Имя
+lngTableFieldType=Тип
+lngTableFieldConstraint=Ограничение
+lngSendToExcelSuccess=Пересылка данных в Excel завершилась успешно!
+lngSendToExcelWait=Пересылка дынных в Excel, подождите ...
+lngNoDataToSend=Нет данных для пересылки!
+lngFailToSave=Файл не может быть сохранён!
+lngError=Ошибка:
+lngNoDataToExport=Нет данных для Экспорта!
+lngExcelFormat=Excel совместимый Формат
+lngCSVFormat=Значение разделителя Формата
+lngXMLFormat=XML Формат
+lngHTMLFormat=HTML Формат
+lngCCFunction="Функция      "
+lngCCField   ="Поле         "
+lngCCTable   ="Таблица      "
+lngCCView    ="Пердставление"
+lngCCIndex=   "Индекс       "
+lngCCTrigger= "Триггер      "
+lngReservedWordQuery=%s зарезервированное Слово
+lngQueryIdent=Запрос
+lngEnterName=Введите Имя!
+lngSaveQuery=Сохранить Запрос:
+lngEnterQueryNamePrompt=Введите Имя для Запроса:
+lngCleanUpMessage=БД было вычищено на %s от ненужных данных. 
+lngDeleteConfirmation=Удалить?
+lngConfirmation=Подтверждение:
+lngDBDisconnected=БД отключена
+lngDBConnected=БД подключена
+lngDisconnected=Не подключен
+lngOpenDatabase=Открыть БД:
+lngTVQueries=Запросы
+lngTVTriggers=Триггеры
+lngTVViews=Представления
+lngTVIndexes=Индексы
+lngTVTables=Таблицы
+lngTVFields=Поля
+lngQueryExecTime=Запрос выполнен за %dms
+lngQueryExecuted=Запрос выполнен
+lngDBCreated=БД создана
+lngSelectDBSaveTarget=Выберите Путь для новой БД:
+lngTableFieldDefault="По умолчанию"
+lngMultiPrimaryKey=Мульти Поля в Первичном ключе могут быть использованны только не выбран Первичный ключ с 1 Полем! 
+lngMigrationSuccess=Перенос БД завершился успешно!
+lngMigrationInProgress=Таблица "%s" перемещается, подождите ...
+
+;##############################################
+;########## Begin Language Updates ############
+;## Send updates to "sqliteadmin@orbmu2k.de" ##
+;##############################################
+
+lngSQLiteDB=SQLite Database
+lngAnyFile=Any File
+lngImportDone=Import done!
+lngBtnFirst=First
+lngBtnPrev=Previos
+lngBtnLast=Last
+lngBtnNext=Next
+lngBtnAdd=Insert
+lngBtnRemove=Delete
+lngBtnEdit=Edit
+lngBtnApply=Post
+lngBtnCancel=Cancel
+lngBtnRefresh=Refresh
+
+;##############################################
+;########### End Language Updates #############
+;##############################################
+
+[StrfTimeHint]
+Line0=
+Line1=Formatconstants:
+Line2=
+Line3=%d   день месяца
+Line4=%f   ** fractional seconds  SS.SSS
+Line5=%H   часы 00-24
+Line6=%j   день года 001-366
+Line7=%J   ** Julian day number
+Line8=%m   месяц 01-12
+Line9=%M   минуты 00-59
+Line10=%s   секунды начиная с 1970-01-01
+Line11=%S   секунды 00-59
+Line12=%w   день недели 0-6  sunday==0
+Line13=%W   неделя в году 00-53
+Line14=%Y   год 0000-9999
+Line15=%%   %

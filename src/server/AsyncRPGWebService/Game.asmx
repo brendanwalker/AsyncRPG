@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="Game.asmx.cs" Class="AsyncRPGWebService.GameService" %>

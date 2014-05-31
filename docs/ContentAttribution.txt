@@ -1,0 +1,13 @@
+[Audio]
+freesound.org
+Success - https://www.freesound.org/people/grunz/sounds/109662/
+Alert - https://www.freesound.org/people/KIZILSUNGUR/sounds/72128/
+Error - https://www.freesound.org/people/Autistic%20Lucario/sounds/142608/
+
+[Sprites]
+http://opengameart.org/content/unfinished-mech-sketch
+http://opengameart.org/content/mobile-turret
+http://opengameart.org/content/mcu-43-gryphon-mech
+http://opengameart.org/content/ba-2-blast-all-bot-mark-2
+http://www.rpgmakerweb.com/a/graphics/futuristic-tiles
+Enterbrain/Tsukuru - http://www.famitsu.com/blog/tkool/2008/06/
