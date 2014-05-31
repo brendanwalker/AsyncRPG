@@ -1,11 +1,14 @@
-@echo off
+@echo on
 
 call build_constants.bat
 
-pushd "%BUILD_DIR%"
-for /F "delims=" %%i in ('dir /b') do (rmdir "%%i" /s/q || del "%%i" /s/q)
-popd
+echo "Cleaning %BUILD_DIR%"
+del "%BUILD_DIR%\*.*" /s /q
+rmdir "%BUILD_DIR%" /s /q
+mkdir "%BUILD_DIR%"
 
-pushd "%UNITY_CLIENT_PLUGINS%"
-for /F "delims=" %%i in ('dir /b') do (rmdir "%%i" /s/q || del "%%i" /s/q)
-popd
+echo "Cleaning %UNITY_CLIENT_PLUGINS%"
+del "%UNITY_CLIENT%\Assets\Plugins.meta"
+del "%UNITY_CLIENT_PLUGINS%\*.*" /s /q
+rmdir "%UNITY_CLIENT_PLUGINS%" /s /q
+mkdir "%UNITY_CLIENT_PLUGINS%"
