@@ -57,29 +57,3 @@ Make sure to build the server at lease once, then do either of the following:
 #### Building ALL THE THINGS!
 If you have followed the initial build steps, then: 
 * Run scripts\build\rebuild_all_debug.bat script
-
-### What's can I help with?
-A million things. Despite everything done far there is a ton to do. Here's a few ideas:
-* Design  
-  * What are the player character classes? What abilities do they have?  
-  * More fully define the enemy AI types? What abilities do they have?  
-  * Power up / loot design?  
-  * Bosses?  
-  * Hacking puzzles?  
-  * Dungeon Layout  
-* Art
-  * Need a real UI  
-  * Using temp sprites, mostly purchased from RPGMaker.  
-  * Particle effects  
-  * Room Tiles  
-* Sound  
-  * Need new sounds for everything  
-* Code  
-  * Get running on the iPhone and Android (sqlite will be the interesting part)  
-  * DB should initialize from imported data, rather then from files.  
-  * UI work  
-  * Effects hookup  
-  * Player interaction (attacks, abilities, etc)  
-  * New behaviors in the behavior tree  
-  * Security (encryption, account info)  
-  * Thread safety  
