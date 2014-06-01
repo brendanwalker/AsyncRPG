@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="AsyncRPG : A multi-player turned based dungeon crawler written in Unity/C#" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>AsyncRPG</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/brendanwalker/AsyncRPG">View on GitHub</a>
+
+          <h1 id="project_title">AsyncRPG</h1>
+          <h2 id="project_tagline">A multi-player turned based dungeon crawler written in Unity/C#</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/brendanwalker/AsyncRPG/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/brendanwalker/AsyncRPG/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a name="what-is-the-goal-of-asyncrpg" class="anchor" href="#what-is-the-goal-of-asyncrpg"><span class="octicon octicon-link"></span></a>What is the goal of AsyncRPG?</h3>
+
+<p>AsyncRPG is a my attempt to make a turn based multi-player dungeon crawler that can either be played to completion in a single session with friends or a play by notification style akin to "Draw Something". I really enjoy playing dungeon crawler games with friends, but as we've gotten older it's become more difficult to dedicate hours at a time to a single board game. I've wanted to be able to start a campaign with friend, and then "save it to the cloud". Then you could either continue the campaign a move at a time on your smart phone when you have a few moments on the bus, or at home on your PC. If multiple people are signed on at the same time then the game should open up chat and become more real time.</p>
+
+<h3>
+<a name="whats-the-gameplaytheme-of-asyncrpg" class="anchor" href="#whats-the-gameplaytheme-of-asyncrpg"><span class="octicon octicon-link"></span></a>What's the gameplay/theme of AsyncRPG?</h3>
+
+<p>It's honestly pretty thin right now. I don't even have a good name for the game (AsyncRPG is a terrible place-holder name at the moment). In any event, the basic idea is that the game is played in a series of tiled rooms inside a dying starship. Each player controls a robot of a specific character class with a finite amount of energy with which to move and take actions. You need to make your way to the room with the escape pod and have enough energy left over to power it. </p>
+
+<h4>
+<a name="game-mechanics" class="anchor" href="#game-mechanics"><span class="octicon octicon-link"></span></a>Game Mechanics</h4>
+
+<p>Fortunately, rooms frequently contain energy pods that you can drain on your way to the escape pod. Unfortunately, those rooms also contain enemy AI robots that are trying to compete for the same remaining energy supply. Before energy can be drained from an energy pods, it must be hacked so that the player's team can drain them. AI can also hack the energy the energy pods, taking possession away from your team. Since the star ship is dark and the enemy AI are trying to conserve power they can only see in a limited vision cone when they are stationary (when they move, they turn their vision cone off). They can spot players, other AI, and energy tanks if they pass through their vision cone while stationary. Different enemy AI have different abilities. Some can see better, some can move farther each turn, some can attack harder, and some can drain energy more efficiently, and some can heal other friendly AI. </p>
+
+<h4>
+<a name="turn-structure" class="anchor" href="#turn-structure"><span class="octicon octicon-link"></span></a>Turn Structure</h4>
+
+<p>The most important design element to note is that each time a player moves all the enemy AI in the room get a move. Since there is no turn order between the players (i.e. anyone can submit a move whenever they want) you have to be careful about wandering off on your own and getting overwhelmed. However, this also means that you don't have to wait for your friend if they are taking too long to commit a move i.e. the game won't grind to halt if someone disappears on vacation. I'm honestly not sure if this is a good mechanic or not. One of the reasons I wanted to make this game was to see if this method would fix the M.I.A. team mate problem without making other team mates feeling left behind if they didn't commit moves as much. I'm open to suggestions.</p>
+
+<h3>
+<a name="whats-implemented-so-far" class="anchor" href="#whats-implemented-so-far"><span class="octicon octicon-link"></span></a>What's implemented so far?</h3>
+
+<p>Quite a bit. There is a game client, a server, and some tools. </p>
+
+<h4>
+<a name="player-interactions" class="anchor" href="#player-interactions"><span class="octicon octicon-link"></span></a>Player Interactions</h4>
+
+<p>A player in the client can currently:</p>
+
+<ul>
+<li>Sign in to the server</li>
+<li>Create a game and a character (using terrible temp UI)</li>
+<li>Move a robot through a tile based dungeon</li>
+<li>Hack and drain energy tanks</li>
+<li>Chat with other players in an chat window (via an IRC channel connection)</li>
+</ul><h4>
+<a name="enemy-ai-interactions" class="anchor" href="#enemy-ai-interactions"><span class="octicon octicon-link"></span></a>Enemy AI Interactions</h4>
+
+<p>An enemy AI can currently:</p>
+
+<ul>
+<li>Wander aimlessly in a room</li>
+<li>Spot other AI, energy tanks, and players</li>
+<li>Send chat notifications about their perception</li>
+<li>Navigate to, hack, and drain energy tanks</li>
+</ul><h4>
+<a name="level-editing" class="anchor" href="#level-editing"><span class="octicon octicon-link"></span></a>Level Editing</h4>
+
+<p>Room layout is done in the Ogmo tile editor. There is markup for:</p>
+
+<ul>
+<li>Tile foreground and background</li>
+<li>Navigable tiles</li>
+<li>Enemy Spawners</li>
+<li>Energy Tank Spawners</li>
+<li>Doors/Portals to other rooms</li>
+</ul><h4>
+<a name="server" class="anchor" href="#server"><span class="octicon octicon-link"></span></a>Server</h4>
+
+<p>The server is actually just a set of REST calls over HTTP handled by a web server. The server logic is contained inside a single library. The web service can be hosted in a few ways:</p>
+
+<ol>
+<li>Host the web service inside of an IIS server as a set of ASPX pages<br><ul>
+<li>Good if you want a permanent, robust, authoritative game server.<br>
+</li>
+<li>Kind of a pain to setup though<br>
+</li>
+</ul>
+</li>
+<li>Run the web service from a light weight standalone web server executable<br><ul>
+<li>The standalone AsyncRPGWebServer is part of the server project<br>
+</li>
+</ul>
+</li>
+<li>Host the server inside the client<br><ul>
+<li>When signing in you can chose to launch a server in-process<br>
+</li>
+<li>You can either play single player this way, or other players can connect to your in-process server</li>
+</ul>
+</li>
+</ol><h4>
+<a name="database" class="anchor" href="#database"><span class="octicon octicon-link"></span></a>Database</h4>
+
+<p>The game state is persisted inside a database. The server currently either supports SQLServer or SQLite databases. If you're running either the standalone web server or the in-process server the database will get setup automatically on start-up if it doesn't exist. If you want to run the server with IIS you have to run a script to set it up. Each call to the web service is wrapped inside a transaction, so you can't mess up the game state if something bad happens. The actual queries to the database are abstracted using LinqToSql as to minimize the amount of database specific code. DBLinq is used to auto-generate the binding classes using a dbml file to define the schema structure.</p>
+
+<h3>
+<a name="project-organization" class="anchor" href="#project-organization"><span class="octicon octicon-link"></span></a>Project Organization</h3>
+
+<ul>
+<li>\build<br><ul>
+<li>\content - copy of map and mob template data used by the server on initialization<br>
+</li>
+<li>\server - standalone game server and server tool<br>
+</li>
+<li>\client - game client executable and dependent data </li>
+</ul>
+</li>
+<li>\docs - documentation that mirrors what's on the wiki<br>
+</li>
+<li>\lib - 3rd party libraries (DBLinq, LitJson, and System.Data.SQLite)<br>
+</li>
+<li>\scripts<br><ul>
+<li>\build - batch files used to rebuild the game server and client<br>
+</li>
+<li>\mssql - SQLServer specific setup scripts (IIS only)<br>
+</li>
+<li>\os - Windows specific server setup scripts (IIS only)<br>
+</li>
+<li>\script_data - Auto-verification script data<br>
+</li>
+<li>\sqlite - SQLite server testing scripts<br>
+</li>
+</ul>
+</li>
+<li>\src<br><ul>
+<li>\content - map and mob template source data<br>
+</li>
+<li>\server<br><ul>
+<li>\AsyncRPGDBTool - Database modification and verification tool<br>
+</li>
+<li>\AsyncRPGSharedLib - The vast majority of the server code<br>
+</li>
+<li>\AsyncRPGWebServer - Wrapper exe for the stand alone web server<br>
+</li>
+<li>\AsyncRPGWebService - Wrapper ASPX pages when hosting in IIS<br>
+</li>
+</ul>
+</li>
+<li>\unityClient - Game client source and dependant content<br>
+</li>
+</ul>
+</li>
+<li>\tools - Ogmo editor and sqliteadmin</li>
+</ul><h3>
+<a name="how-do-i-build-and-run-this-game" class="anchor" href="#how-do-i-build-and-run-this-game"><span class="octicon octicon-link"></span></a>How do I build and run this game?</h3>
+
+<h4>
+<a name="initial-build" class="anchor" href="#initial-build"><span class="octicon octicon-link"></span></a>Initial Build</h4>
+
+<ol>
+<li>Make sure the the paths are set up correctly in scripts\build\build_constants.bat
+
+<ul>
+<li>DOT_NET_FRAMEWORK should point to a .NET 3.5 framework install (needed for server build)<br>
+</li>
+<li>UNITY_ROOT should point at the Unity install<br>
+</li>
+</ul>
+</li>
+<li>Run scripts\build\build_server_debug.bat
+
+<ul>
+<li>This builds the server DLLs that the Unity client is dependant on<br>
+</li>
+</ul>
+</li>
+<li>Launch the AsyncRPG.unity project in src\unityClient\Assets<br><ul>
+<li>This will do an initial import of the assets the client depends on<br>
+</li>
+</ul>
+</li>
+<li>Close the Unity editor once it's done importing<br>
+</li>
+<li>Run the build_unity_client.bat in the scipts\build folder<br><ul>
+<li>This generates the game client in the build\client folder<br>
+</li>
+</ul>
+</li>
+</ol><h4>
+<a name="building-the-server" class="anchor" href="#building-the-server"><span class="octicon octicon-link"></span></a>Building the Server</h4>
+
+<p>Do either of the following:</p>
+
+<ul>
+<li>Build the src\server\AsyncRPGServer.sln in Visual Studio </li>
+<li>Run scripts\build\build_server_debug.bat</li>
+</ul><h4>
+<a name="building-the-client" class="anchor" href="#building-the-client"><span class="octicon octicon-link"></span></a>Building the Client</h4>
+
+<p>Make sure to build the server at lease once, then do either of the following:</p>
+
+<ul>
+<li>Open and build src\unityClient\Assets\AsyncRPG.unity<br><ul>
+<li>Need to do this at least once to import assets<br>
+</li>
+</ul>
+</li>
+<li>Run scripts\build\build_unity_client.bat<br>
+</li>
+</ul><h4>
+<a name="building-all-the-things" class="anchor" href="#building-all-the-things"><span class="octicon octicon-link"></span></a>Building ALL THE THINGS!</h4>
+
+<p>If you have followed the initial build steps, then: </p>
+
+<ul>
+<li>Run scripts\build\rebuild_all_debug.bat script</li>
+</ul><h3>
+<a name="whats-can-i-help-with" class="anchor" href="#whats-can-i-help-with"><span class="octicon octicon-link"></span></a>What's can I help with?</h3>
+
+<p>A million things. Despite everything done so far there is a ton of work yet to do. Here are a few ideas:</p>
+
+<ul>
+<li>Design<br><ul>
+<li>What are the player character classes? What abilities do they have?<br>
+</li>
+<li>More fully define the enemy AI types? What abilities do they have?<br>
+</li>
+<li>Power up / loot design?<br>
+</li>
+<li>Bosses?<br>
+</li>
+<li>Hacking puzzles?<br>
+</li>
+<li>Dungeon Layout<br>
+</li>
+</ul>
+</li>
+<li>Art
+
+<ul>
+<li>Need a real UI<br>
+</li>
+<li>Using temp sprites, mostly purchased from RPGMaker.<br>
+</li>
+<li>Particle effects<br>
+</li>
+<li>Room Tiles<br>
+</li>
+</ul>
+</li>
+<li>Sound
+
+<ul>
+<li>Need new sounds for everything<br>
+</li>
+</ul>
+</li>
+<li>Code
+
+<ul>
+<li>Get running on the iPhone and Android (sqlite will be the interesting part)<br>
+</li>
+<li>DB should initialize from imported data, rather then from files.<br>
+</li>
+<li>UI work<br>
+</li>
+<li>Effects hookup<br>
+</li>
+<li>Player interaction (attacks, abilities, etc)<br>
+</li>
+<li>New behaviors in the behavior tree<br>
+</li>
+<li>Security (encryption, account info)<br>
+</li>
+<li>Thread safety<br>
+</li>
+</ul>
+</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">AsyncRPG maintained by <a href="https://github.com/brendanwalker">brendanwalker</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
