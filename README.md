@@ -3,6 +3,9 @@ AsyncRPG
 
 A multi-player turned based dungeon crawler written in Unity/C#
 
+### What is the goal of AsyncRPG?
+AsyncRPG is a my attempt to make a turn based multi-player dungeon crawler that can either be played to completion in a single session with friends or a play by notification style akin to "Let's Draw Something". I really enjoy playing dungeon crawler games with friends, but as we've gotten older it's become difficult to dedicate hours at a time to a single board game. I've wanted to be able to start a campaign with friend, and then "save it to the cloud". Then you could either continue the campaign a move at a time on your smart phone when you have a few moments on the bus, or at home on your PC. If multiple people are signed on at the same time then the game should open up chat and become more real time.
+
 ### Project Organization
 * \build  
   * \content - copy of map and mob template data used by the server on initialization  
@@ -39,9 +42,6 @@ A multi-player turned based dungeon crawler written in Unity/C#
 4. Close the Unity editor once it's done importing  
 5. Run the build_unity_client.bat in the scipts\build folder  
   * This generates the game client in the build\client folder  
-
-### What is the goal of AsyncRPG?
-AsyncRPG is a my attempt to make a turn based multi-player dungeon crawler that can either be played to completion in a single session with friends or a play by notification style akin to "Let's Draw Something". I really enjoy playing dungeon crawler games with friends, but as we've gotten older it's become difficult to dedicate hours at a time to a single board game. I've wanted to be able to start a campaign with friend, and then "save it to the cloud". Then you could either continue the campaign a move at a time on your smart phone when you have a few moments on the bus, or at home on your PC. If multiple people are signed on at the same time then the game should open up chat and become more real time.
 
 #### Building the Server 
 Do either of the following:
