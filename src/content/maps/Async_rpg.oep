@@ -16,7 +16,7 @@
     <Width>800</Width>
     <Height>576</Height>
   </LevelMaximumSize>
-  <Filename>E:\git-repo\home_repo\AsyncRPG\shared\content\maps\Async_rpg.oep</Filename>
+  <Filename>E:\git-repo\AsyncRPG_repo\src\content\maps\Async_rpg.oep</Filename>
   <AngleMode>Radians</AngleMode>
   <CameraEnabled>false</CameraEnabled>
   <CameraSize>
@@ -102,7 +102,7 @@
   <Tilesets>
     <Tileset>
       <Name>SciFi</Name>
-      <FilePath>..\..\..\flashClient\content\gfx\tilesets\scifi_tileset.png</FilePath>
+      <FilePath>..\..\unityClient\Assets\Resources\Gfx\TileSets\SciFi.png</FilePath>
       <TileSize>
         <Width>16</Width>
         <Height>16</Height>
