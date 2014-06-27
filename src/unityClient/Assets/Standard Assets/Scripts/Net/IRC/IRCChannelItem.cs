@@ -1,3 +1,6 @@
+﻿using UnityEngine;
+using System.Collections;
+
 /* Ported from as3irclib
  * Copyright the original author or authors.
  * 
@@ -13,10 +16,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-﻿using UnityEngine;
-using System.Collections;
-
 public class IRCChannelItem 
 {
 	public string Name { get; private set; }

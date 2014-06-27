@@ -1,3 +1,9 @@
+﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using System;
+using System.Text.RegularExpressions;
+
 /* Ported and extended from as3irclib
  * Copyright the original author or authors.
  * 
@@ -13,12 +19,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using System;
-using System.Text.RegularExpressions;
-
 public class IRCEventDispatcher 
 {
     public delegate void IRCEventDelegate(IRCEvent ircEvent);

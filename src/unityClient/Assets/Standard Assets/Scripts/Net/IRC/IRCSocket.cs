@@ -1,3 +1,10 @@
+﻿using UnityEngine;
+using System;
+using System.IO;
+using System.Net.Sockets;
+using System.Collections;
+using System.Text;
+
 /* Ported and extended from as3irclib
  * Copyright the original author or authors.
  * 
@@ -13,14 +20,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-﻿using UnityEngine;
-using System;
-using System.IO;
-using System.Net.Sockets;
-using System.Collections;
-using System.Text;
-
 public class IRCSocket 
 {
     private const char CARRIAGE_RETURN = '\r';

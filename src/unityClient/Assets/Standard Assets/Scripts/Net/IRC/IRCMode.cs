@@ -1,3 +1,8 @@
+﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+
 /* Ported from as3irclib
  * Copyright the original author or authors.
  * 
@@ -13,12 +18,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
-
 public class IRCMode
 {
 	public bool OnlyOpsSetTopic { get; private set; }
